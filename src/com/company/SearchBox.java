@@ -39,7 +39,11 @@ public class SearchBox {
             or.add(clause1);
             or.add(clause2);
             DBObject query = new BasicDBObject("$or", or);
-            cursor = collection.find(query);
+            cursor = collection.find(query).
+                    sort(new BasicDBObject("StateName", 1).
+                    append("PlaceName",1).
+                    append("CountyName",1).
+                    append("CommunityName",1));
 
         }
         while(cursor.hasNext()){
