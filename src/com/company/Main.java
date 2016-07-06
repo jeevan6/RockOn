@@ -26,7 +26,7 @@ public class Main {
         DatabaseManager Dm=new DatabaseManager();
         Dm.connect();
         Dm.CreateCollection("GeoNamesData");
-        System.out.println(DeList.size());
+        //System.out.println(DeList.size());
         Dm.addData(DeList);
         SearchBox box = new SearchBox(Dm.getDb());
         box.Search(mode,test);

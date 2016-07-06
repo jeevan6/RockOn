@@ -41,11 +41,13 @@ public class SearchBox {
             DBObject query = new BasicDBObject("$or", or);
             cursor = collection.find(query).
                     sort(new BasicDBObject("StateName", 1).
-                    append("PlaceName",1).
-                    append("CountyName",1).
-                    append("CommunityName",1));
+                            append("PlaceName", 1).
+                            append("CountyName", 1).
+                            append("CommunityName", 1));
 
         }
+        if(cursor.size()==0)
+            System.out.println("Your Search Produced 0 results");
         while(cursor.hasNext()){
             DBObject ne = cursor.next();
             PrintDBobject(ne);

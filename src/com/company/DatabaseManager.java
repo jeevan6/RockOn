@@ -51,9 +51,10 @@ public class DatabaseManager {
                 collection.insert(doc);
                 i++;
             }
-            //System.out.println(collection.count());
+
+            System.out.println("DataAddedSucccesfully");
         }
-        System.out.println(collection.count());
+        //System.out.println(collection.count());
     }
 
     private BasicDBObject getDoc(DataEntry d) {
