@@ -21,7 +21,7 @@ public class Main {
         System.out.println(DeList.size());
         Dm.addData(DeList);
         SearchBox box = new SearchBox(Dm.getDb());
-        box.Search("City","ington");
+        box.Search("Any","53103");
 
 
     }

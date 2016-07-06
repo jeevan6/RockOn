@@ -32,6 +32,16 @@ public class SearchBox {
                             append("CommunityName",1));
 
         }
+        if(mode.equals("Any")){
+            DBObject clause1 = new BasicDBObject("PlaceName",new BasicDBObject("$regex",test));
+            DBObject clause2 = new BasicDBObject("PostalCode",new BasicDBObject("$regex",test) );
+            BasicDBList or = new BasicDBList();
+            or.add(clause1);
+            or.add(clause2);
+            DBObject query = new BasicDBObject("$or", or);
+            cursor = collection.find(query);
+
+        }
         while(cursor.hasNext()){
             DBObject ne = cursor.next();
             PrintDBobject(ne);
